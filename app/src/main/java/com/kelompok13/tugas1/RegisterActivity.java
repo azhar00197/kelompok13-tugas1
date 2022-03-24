@@ -24,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View reg_Btn) {
                 startActivity(home);
+                finish();
             }
         });
 
