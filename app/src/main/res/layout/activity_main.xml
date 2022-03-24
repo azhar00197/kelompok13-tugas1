@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/logoutBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -29,9 +30,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/greetingTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selamat Datang, User"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
