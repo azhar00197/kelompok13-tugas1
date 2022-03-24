@@ -8,4 +8,5 @@
     </string-array>
 
     <string name="logout">Logout</string>
+    <string name="greeting_message">Selamat Datang, %1$s</string>
 </resources>
