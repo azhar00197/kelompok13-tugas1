@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,13 +26,18 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View loginBtn) {
-                String username = usernameET.toString();
-                String password = passwordET.toString();
+                String username = usernameET.getText().toString();
+                String password = passwordET.getText().toString();
                 for(int i=0; i<users.length; i=i+2) {
                     if(users[i].equals(username)) {
-                        if (users[++i].equals(password)) {
+                        int j = i=i+1;
+                        if (users[j].equals(password)) {
                             startActivity(intent);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
                         }
+                    } else {
+                        Toast.makeText(LoginActivity.this, password, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
