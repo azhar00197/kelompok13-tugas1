@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,7 +22,9 @@ public class LoginActivity extends AppCompatActivity {
         EditText usernameET = findViewById(R.id.username_ET);
         EditText passwordET = findViewById(R.id.password_ET);
         Button loginBtn = findViewById(R.id.login_button);
-        Intent intent = new Intent (this, MainActivity.class);
+        TextView registerBtn = findViewById(R.id.reg_button);
+        Intent home = new Intent (this, MainActivity.class);
+        Intent register = new Intent (this, RegisterActivity.class);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,14 +35,21 @@ public class LoginActivity extends AppCompatActivity {
                     if(users[i].equals(username)) {
                         int j = i=i+1;
                         if (users[j].equals(password)) {
-                            startActivity(intent);
+                            startActivity(home);
                         } else {
                             Toast.makeText(LoginActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(LoginActivity.this, password, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "wrong username", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View registerBtn) {
+                startActivity(register);
             }
         });
     }
