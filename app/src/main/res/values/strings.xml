@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tugas1</string>
+    <string name="username">jajangsuprapto</string>
+    <string name="password">password</string>
+    <string-array name="user">
+        <item>budiman</item>
+        <item>password1</item>
+    </string-array>
+
 </resources>
