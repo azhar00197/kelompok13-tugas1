@@ -16,22 +16,25 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         Button reg_Btn = findViewById(R.id.register_button);
         TextView log_Btn = findViewById(R.id.login_button);
-
-        Intent home = new Intent(this, MainActivity.class);
-        Intent login = new Intent(this, LoginActivity.class);
+        TextView usernameET = findViewById(R.id.username_ET);
 
         reg_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View reg_Btn) {
-                startActivity(home);
-                finish();
+                String username = usernameET.getText().toString();
+                if(!username.isEmpty()) {
+                    Intent home = new Intent(RegisterActivity.this, MainActivity.class);
+                    home.putExtra(MainActivity.USER_EXTRA, username);
+                    startActivity(home);
+                    finish();
+                }
             }
         });
 
         log_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View log_Btn) {
-                startActivity(login);
+                finish();
             }
         });
     }
