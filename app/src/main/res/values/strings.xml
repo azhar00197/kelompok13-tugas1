@@ -7,4 +7,5 @@
         <item>password1</item>
     </string-array>
 
+    <string name="logout">Logout</string>
 </resources>
