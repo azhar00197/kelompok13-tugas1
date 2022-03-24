@@ -21,7 +21,6 @@ public class LoginActivity extends AppCompatActivity {
         EditText usernameET = findViewById(R.id.username_ET);
         EditText passwordET = findViewById(R.id.password_ET);
         Button loginBtn = findViewById(R.id.login_button);
-        Intent intent = new Intent (this, MainActivity.class);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
                     if(users[i].equals(username)) {
                         int j = i=i+1;
                         if (users[j].equals(password)) {
+                            Intent intent = new Intent (LoginActivity.this, MainActivity.class);
+                            intent.putExtra(MainActivity.USER_EXTRA, username);
                             startActivity(intent);
                         } else {
                             Toast.makeText(LoginActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
@@ -42,5 +43,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

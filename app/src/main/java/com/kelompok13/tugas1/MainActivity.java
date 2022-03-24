@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String user = intent.getStringExtra(USER_EXTRA);
 
-        TextView greetingTv = findViewById(R.id.greetingTV);
+        TextView greetingTv = findViewById(R.id.greetingTv);
         greetingTv.setText(getResources().getString(R.string.greeting_message, user));
 
         Button logoutBtn = findViewById(R.id.logoutBtn);
